@@ -64,6 +64,7 @@
     <Compile Include="DateRangeEqualsTest.cs" />
     <Compile Include="DateRangeInequalityOperatorTest .cs" />
     <Compile Include="DateRangeEqualityOperatorTest.cs" />
+    <Compile Include="DateRangeMergeTest.cs" />
     <Compile Include="DateRangeOverlapsTest.cs" />
     <Compile Include="DateRangeConstructorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -34,10 +34,21 @@ namespace Ranger
                 return new DateRange(StartDate, EndDate);
 
             if (other.StartDate >= StartDate &&
-               other.EndDate <= EndDate)
+                other.EndDate <= EndDate)
                 return new DateRange(other.StartDate, other.EndDate);
 
             return null;
+        }
+
+        public DateRange Merge(DateRange other)
+        {
+            if (!Overlaps(other))
+                return new DateRange(StartDate, EndDate);
+
+            var startDate = StartDate <= other.StartDate ? StartDate : other.StartDate;
+            var endDate = EndDate <= other.EndDate ? other.EndDate : EndDate;
+
+            return new DateRange(startDate, endDate);
         }
 
         public bool Contains(DateTime dateTime)
