@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Ranger
 {
@@ -49,6 +51,21 @@ namespace Ranger
             var endDate = EndDate <= other.EndDate ? other.EndDate : EndDate;
 
             return new DateRange(startDate, endDate);
+        }
+
+        public IEnumerable<DateRange> Divide(DateTime division)
+        {
+            if (!Contains(division))
+                return new List<DateRange>
+                {
+                    new DateRange(StartDate, EndDate)
+                };
+
+            return new List<DateRange>
+            {
+                new DateRange(StartDate, division.Subtract(new TimeSpan(0, 0, 1))),
+                new DateRange(division, EndDate)
+            };
         }
 
         public bool Contains(DateTime dateTime)
