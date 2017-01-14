@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <id>Ranger</id>
+    <version>1.0.0</version>
+    <title>Ranger</title>
+    <authors>Daniel Lowman</authors>
+    <owners>Daniel Lowman</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>A DateRange library for the .NET DateTime Structure.</description>
     <releaseNotes>Initial Release.</releaseNotes>
     <copyright>Copyright Daniel Lowman 2017</copyright>
     <tags>DateRange DateTime Ranger</tags>
