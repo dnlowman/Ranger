@@ -22,5 +22,25 @@ namespace Ranger
         {
             return (StartDate <= dateTime && dateTime <= EndDate);
         }
+
+        public static bool operator ==(DateRange a, DateRange b)
+        {
+            return a.StartDate == b.StartDate && a.EndDate == b.EndDate;
+        }
+
+        public static bool operator !=(DateRange a, DateRange b)
+        {
+            return a.StartDate != b.StartDate && a.EndDate != b.EndDate;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return this == obj as DateRange;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
