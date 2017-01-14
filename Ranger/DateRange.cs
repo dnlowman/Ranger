@@ -18,6 +18,28 @@ namespace Ranger
             return StartDate <= dateRange.EndDate && dateRange.StartDate <= EndDate;
         }
 
+        public DateRange Intersect(DateRange other)
+        {
+            if (StartDate <= other.StartDate &&
+                other.StartDate < EndDate &&
+                EndDate < other.EndDate)
+                return new DateRange(other.StartDate, EndDate);
+
+            if (other.StartDate < StartDate &&
+                other.EndDate < EndDate)
+                return new DateRange(StartDate, other.EndDate);
+
+            if (other.StartDate < StartDate &&
+                other.EndDate > EndDate)
+                return new DateRange(StartDate, EndDate);
+
+            if (other.StartDate >= StartDate &&
+               other.EndDate <= EndDate)
+                return new DateRange(other.StartDate, other.EndDate);
+
+            return null;
+        }
+
         public bool Contains(DateTime dateTime)
         {
             return (StartDate <= dateTime && dateTime <= EndDate);

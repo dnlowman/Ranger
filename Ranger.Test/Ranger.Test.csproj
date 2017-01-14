@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateRangeIntersectTest.cs" />
     <Compile Include="DateRangeContainsTest.cs" />
     <Compile Include="DateRangeEqualsTest.cs" />
     <Compile Include="DateRangeInequalityOperatorTest .cs" />
