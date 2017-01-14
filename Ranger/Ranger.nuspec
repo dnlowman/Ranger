@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Ranger</id>
+    <id>dnlowman.Ranger</id>
     <version>1.0.0</version>
     <title>Ranger</title>
     <authors>Daniel Lowman</authors>
